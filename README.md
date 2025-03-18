@@ -1,9 +1,10 @@
 
-#OBS Desk Thingy
+# OBS Desk Thingy v2
 
-##**Overview of functions**
+## **Overview of functions**
 
-> ###WebSocketClient
+### WebSocketClient
+>⠀
 The `WebSocketClient` class provides a simple and convenient way to establish and manage a WebSocket connection to a server. It allows you to send and receive messages, handle connection events, and manage the connection lifecycle.
 
 **Constructor**
