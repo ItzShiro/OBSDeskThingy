@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OBSDeskThingy</title>
+
+    <link rel="stylesheet" href="assets/css/common.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="leftMain">
+      <div class="line line1">
+        <div class="left tile tile-normal">
+          <span class="time">04:20am</span>
+          <span class="day">Sunday</span>
+          <span class="date">12/12/2021</span>
+        </div>
+        <div class="right tile tile-normal">
+          <img src="./assets/img/lockIcon.svg" class="tileIcon blackImg" />
+        </div>
+      </div>
+      <!-- Static -->
+      <div class="line tile line2">
+        <div class="tileAppsIcon" onclick>
+          <img src="./assets/img/obsIcon.png" class="tileIcon" />
+        </div>
+      </div>
+      <div class="line line3">
+        <div class="header">
+          <button class="backBtn">Back</button>
+          <div class="text">
+            <span>Connect to PC</span>
+            <span
+              >Status:
+              <span class="connectionStatusSpan">Disconnected</span></span
+            >
+          </div>
+        </div>
+        <div class="inputLine">
+          <input
+            class="input"
+            type="text"
+            id="ipInput"
+            placeholder="127.0.0.1"
+          />
+          <input class="input" type="text" id="portInput" placeholder="8080" />
+        </div>
+        <!-- <div class="inputLine">
+          <input
+            class="input"
+            type="text"
+            id="keyInput"
+            placeholder="Password"
+          />
+        </div> -->
+        <div class="inputLine">
+          <button class="input window_connectButton">
+            <span>Connect</span>
+            <div class="loadingIcon">
+              <div class="dot"></div>
+              <div class="inside"></div>
+              <div class="dot"></div>
+            </div>
+          </button>
+        </div>
+        <div class="connectBackground"></div>
+      </div>
+    </div>
+    <div class="rightMain">
+      <nav>
+        <div class="iconRow">
+          <!-- <div class="icon">
+            <img src="./assets/img/settings.svg" alt="settingsIcon" />
+          </div> -->
+        </div>
+        <div class="iconRow">
+          <div class="icon fullScreenToggle">
+            <img src="./assets/img/fullScreenIn.svg" alt="FullScreenIcon" />
+          </div>
+          <div class="icon connectWindow">
+            <img src="./assets/img/connect.svg" alt="ConnectIcon" />
+            <div class="indicators">
+              <div class="client_server-connectionIndicator"></div>
+              <div class="server_server-connectionIndicator"></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--Design js files-->
+    <script src="./assets/js/connectWindow.js" type="module"></script>
+
+    <!--WS and stuff-->
+    <script src="./assets/js/connect.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+@import url("main.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nova+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --text: #fff;
+
+  --tile-color: rgba(000, 000, 000, 0.1);
+  --tile-icon-alt: rgba(0, 0, 0, 0.1);
+  --tile-alt-active: #243642;
+
+  --nav: #1c1d21;
+
+  --input: rgba(110, 110, 110, 0.123);
+  --input-border: rgba(105, 51, 130, 0.5);
+  --input-border-radius-alt: 10px;
+
+  --nav-size: 70px;
+  --gap-size: 10px;
+  --min-border-radius: 3px;
+  --border-radius: 6px;
+  --alt-border-radius: 6px;
+  --transition: 0.2s ease-in-out;
+  --transition-delay: 0.2s;
+
+  /* BG */
+  --gradient-1: #693382;
+  --gradient-1-percent: 0%;
+
+  --gradient-2: #336d82;
+  --gradient-2-percent: 50%;
+
+  --gradient-3: #0265c2;
+  --gradient-3-percent: 100%;
+
+  --gradient-rotation: 0deg;
+  --background-non-gradient: rgb(35, 36, 41);
+
+  /* Indicator */
+  --indicator-active: #00be39;
+  --indicator-inactive: #8a0202;
+
+  /* Window */
+  --icon-close: var(--input-border);
+  --icon-minimize: var(--input-border);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", monospace;
+  color: var(--text);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+body {
+  /* background: linear-gradient(
+    var(--gradient-rotation),
+    var(--gradient-1) var(--gradient-1-percent),
+    var(--gradient-2) var(--gradient-2-percent),
+    var(--gradient-3) var(--gradient-3-percent)
+  ); */
+  background-color: var(--background-non-gradient);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.background {
+  width: calc(100% - var(--gap-size));
+  height: calc(100% - var(--gap-size));
+  position: absolute;
+  background-color: var(--tile-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: var(--alt-border-radius);
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--tile-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}

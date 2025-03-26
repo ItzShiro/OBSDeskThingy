@@ -1,0 +1,230 @@
+.leftMain {
+  height: 100%;
+  width: 100%;
+  gap: var(--gap-size);
+  display: flex;
+  flex-direction: column;
+}
+
+.rightMain {
+  nav {
+    width: calc(var(--nav-size) - var(--gap-size));
+    height: 100%;
+    background: var(--tile-color);
+    border-radius: var(--border-radius) var(--alt-border-radius)
+      var(--alt-border-radius) var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0px;
+    border: 1px rgba(255, 255, 255, 0.1) solid;
+    .iconRow {
+      display: grid;
+      gap: 20px;
+    }
+    .icon {
+      --size: 35px;
+      width: var(--size);
+      height: var(--size);
+      cursor: pointer;
+      img {
+        width: var(--size);
+        filter: invert(1) brightness(2);
+      }
+      .indicators {
+        display: flex;
+        align-items: center;
+        height: 20px;
+        flex-direction: column;
+      }
+      .client_server-connectionIndicator,
+      .server_server-connectionIndicator {
+        width: 40%;
+        height: 4px;
+        border-radius: 5px;
+        transition: 1s;
+        margin-bottom: 4px;
+        background-color: var(--indicator-inactive);
+        &.connected {
+          background-color: var(--indicator-active);
+        }
+      }
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: var(--gap-size);
+}
+
+.line1 {
+  .tile {
+    &:nth-child(1) {
+      width: 60%;
+      display: grid;
+      place-content: center;
+      text-align: center;
+      border-radius: var(--alt-border-radius) var(--border-radius)
+        var(--border-radius) var(--border-radius);
+      & > span {
+        &:nth-child(1) {
+          font-size: 35px;
+          line-height: 25px;
+        }
+        &:nth-child(2) {
+          font-size: 25px;
+        }
+        &:nth-child(3) {
+          font-size: 10px;
+        }
+      }
+    }
+    &:nth-child(2) {
+      width: 40%;
+      display: grid;
+      place-content: center;
+    }
+  }
+}
+.line2 {
+  background-color: var(--tile-color);
+  height: 35%;
+  border-radius: var(--border-radius);
+  display: grid;
+  place-content: center;
+}
+
+.line3 {
+  width: calc(100% - var(--nav-size));
+  height: fit-content;
+  min-height: 100px;
+  z-index: 99;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-content: center;
+  padding: var(--gap-size);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition) ease-in-out;
+  transition-property: opacity;
+  &:not(.active) {
+    transition-delay: calc(var(--transition-delay) * 2);
+  }
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: 90px;
+      height: 100%;
+      background-color: var(--input);
+      border: 2px var(--input-border) solid;
+      border-radius: var(--border-radius);
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 27px;
+        line-height: 25px;
+        transition-delay: var(--transition-delay);
+      }
+      span:nth-child(2) {
+        display: flex;
+        font-size: 18px;
+        transition-delay: calc(var(--transition-delay) * 2);
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .inputLine {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: var(--gap-size);
+    button {
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      display: grid;
+      place-content: center;
+      position: relative;
+      overflow: hidden;
+      span {
+        transition: var(--transition);
+      }
+      &.state2 > .loadingIcon {
+        animation: rotate 1.5s infinite;
+        transform: translateY(0px);
+        opacity: 1;
+      }
+      &.state2 > span {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      .loadingIcon {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 20px);
+        transform: translateY(50px);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+      }
+      .checkMarkIcon {
+        width: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(-50% - 50px), -50%);
+        filter: invert(1) brightness(2);
+        transition: var(--transition);
+        opacity: 0;
+        transform: translate(-50px);
+        pointer-events: none;
+      }
+    }
+  }
+  .inputLine {
+    opacity: 0;
+    transition: var(--transition);
+    transform: translateY(-20px);
+  }
+  &.active .inputLine {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  span {
+    opacity: 0;
+    transition: var(--transition);
+  }
+  &.active span {
+    opacity: 1;
+  }
+}
+
+.connectBackground {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: BLACK;
+  opacity: 0.8;
+}

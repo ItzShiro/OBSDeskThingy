@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
+  </head>
+  <body>
+    <main>
+      <nav class="shadow">
+        <div class="draggable"></div>
+        <div style="-webkit-app-region: no-drag" class="dropdownController">
+          <div class="icon hamburgerBtn">
+            <div class="clickyClick"></div>
+            <svg class="hamburgerIcon" viewBox="0 0 100 100" width="50">
+              <path
+                class="line top"
+                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+              />
+              <path class="line middle" d="m 30,50 h 40" />
+              <path
+                class="line bottom"
+                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+              />
+            </svg>
+            <!-- Credits to Mikael Ainalem for making the icon :) https://codepen.io/ainalem -->
+          </div>
+          <div class="dropdown">
+            <div class="header">
+              <div class="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+              </div>
+              <span>Menu</span>
+            </div>
+            <div class="sections">
+              <ul class="furtherDropdown">
+                <li id="about" class="clickable">
+                  Help
+                  <i class="fa-solid fa-play"></i>
+                </li>
+                <li id="settings" class="clickable">
+                  Settings
+                  <i class="fa-solid fa-play"></i>
+                </li>
+              </ul>
+              <ul class="section toOpen" id="about">
+                <li>Helpmeplz</li>
+              </ul>
+              <ul class="section toOpen" id="settings">
+                <li>Helpmeplz</li>
+                <li>Helpmeplz</li>
+                <li>Helpmeplz</li>
+                <li>Helpmeplz</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="logoOuter">
+          <div class="logo">
+            DeskThingy
+            <div class="v2">v2</div>
+          </div>
+        </div>
+        <div style="-webkit-app-region: no-drag" class="controls">
+          <button class="window_controlButton-minimize">
+            <i class="fa-solid fa-window-minimize"></i>
+          </button>
+          <button class="window_controlButton-close">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="content">
+        <div class="tile left">
+          <div class="tileInner shadow">
+            <span class="header">App Info</span>
+            <span>Codename: dtv2</span>
+            <span>Version: 1.0.0</span>
+            <span>Author: cGuy.</span>
+          </div>
+          <div class="tileInner shadow">
+            <span class="header">Connect to OBS</span>
+            <div class="line urlInput">
+              <input type="text" placeholder="IP" />
+              <input type="text" placeholder="Port" />
+            </div>
+            <div class="line">
+              <input type="password" placeholder="Key" />
+            </div>
+            <span>Status: Connected</span>
+            <div class="line">
+              <button class="window_obsConnectButton">Connect</button>
+            </div>
+          </div>
+        </div>
+        <div class="tile right shadow">
+          <div class="header">Server Management</div>
+          <div serverType="ws" class="card">
+            <div class="left">
+              <span class="title">
+                <img src="./assets/img/websocketIcon.png" alt="" />
+                WS/Back-End
+              </span>
+              <span class="status">Status: OFFLINE</span>
+              <span class="clientCount">Clients: 0</span>
+            </div>
+            <div class="right">
+              <div style="--color: #00ff26" class="startButton icon">
+                <i class="fa-solid fa-play"></i>
+                <div class="border"></div>
+              </div>
+              <div
+                style="--color: #0095ff"
+                class="restartButton deactivated icon"
+              >
+                <i class="fa-solid fa-refresh"></i>
+                <div class="border"></div>
+              </div>
+              <div
+                style="--color: #d22b2b"
+                class="terminateButton deactivated icon"
+              >
+                <i class="fa-solid fa-times"></i>
+                <div class="border"></div>
+              </div>
+            </div>
+          </div>
+          <div serverType="web" class="card">
+            <div class="left">
+              <span class="title">
+                <i class="fa-solid fa-code"></i>
+                Web/Front-end
+              </span>
+              <span class="status">Status: OFFLINE</span>
+              <span class="clientCount">Clients: 0</span>
+            </div>
+            <div class="right">
+              <div style="--color: #00ff26" class="startButton icon">
+                <i class="fa-solid fa-play"></i>
+                <div class="border"></div>
+              </div>
+              <div
+                style="--color: #0095ff"
+                class="restartButton deactivated icon"
+              >
+                <i class="fa-solid fa-refresh"></i>
+                <div class="border"></div>
+              </div>
+              <div
+                style="--color: #d22b2b"
+                class="terminateButton deactivated icon"
+              >
+                <i class="fa-solid fa-times"></i>
+                <div class="border"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tile sideBar shadow">
+          <div class="icon">
+            <img src="./assets/img/obsIcon.png" class="obsIcon" alt="obsIcon" />
+          </div>
+          <div class="icon">
+            <img
+              src="./assets/img/githubIcon.png"
+              class="githubIcon"
+              alt="githubIcon"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./assets/js/dropdown.js" defer></script>
+    <script src="./assets/js/des.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
